@@ -1,0 +1,74 @@
+// colors
+$black: #000;
+$text-color: #333;
+$warm-color: #fcf1e8;
+$err-color: #ff4f26;
+$success-color: #40a286;
+$btn-bg: #ecb6ac;
+$btn-bg-hover: #ffc5ba;
+$btn-bg-hollow-hover: #a15345;
+$btn-color: #a15345;
+$btn-color-hollow-hover: #ffe5e0;
+$btn-disabled-bg: #e5e5e5;
+$btn-disabled-color: #666666;
+$input-focus-border-color: rgba(0, 0, 0, 0.4);
+
+// sizes
+$global-border-radius: 23px;
+$global-input-radius: 8px;
+$btn-radius: 30px;
+$input-height: 48px;
+$input-height-md: 44px;
+
+// properties
+$input-border: 1px solid rgba(0, 0, 0, 0.1);
+
+// media
+
+@mixin xlg() {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin xlg-up() {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin lg() {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin lg-up() {
+    @media (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin md() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin md-up() {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin sm() {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin sm-up() {
+    @media (min-width: 601px) {
+        @content;
+    }
+}

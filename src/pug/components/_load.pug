@@ -1,0 +1,5 @@
+mixin load (text = "Загрузить")
+  label.load
+    input(type="file" multiple).visually-hidden
+    img(src="./images/download.svg", alt="")
+    | #{text}

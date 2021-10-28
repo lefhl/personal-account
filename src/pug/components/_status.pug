@@ -1,0 +1,5 @@
+mixin status({text, role = "success"})
+  if role === "success"
+    .status.status_success
+      img(src="./images/tick.svg", alt="")
+      | #{text}

@@ -1,0 +1,6 @@
+mixin nav(links)
+ nav.nav
+  .wrapper.nav__wrapper
+    each link in links
+      a(href="#" class=`${link.className ? link.className : ""}`).nav__link= link.text
+

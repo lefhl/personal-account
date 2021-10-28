@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    & > main {
+        flex-grow: 1;
+    }
+}
+
+a {
+    transition: color 0.3s ease-in-out;
+    text-decoration-skip-ink: none;
+    color: inherit;
+    text-decoration: none;
+
+    &:active,
+    &:focus {
+        color: inherit;
+    }
+}
+
+b {
+    font-weight: 600;
+}
+
+::-ms-clear {
+    display: none;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: $input-border;
+    background-color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+    transition: border-color 0.25s ease-in-out;
+    appearance: none;
+    box-shadow: none;
+    line-height: normal;
+    border-radius: $global-input-radius;
+    height: $input-height;
+
+    &:focus {
+        box-shadow: none;
+        border-color: $input-focus-border-color;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:invalid,
+    &.invalid {
+        border-color: $err-color;
+    }
+}
+
+input[type="checkbox"] {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    appearance: auto;
+    padding: 0;
+}
+
+select {
+    padding-top: rem-calc(0);
+    padding-bottom: rem-calc(0);
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 0.5em;
+    font-family: $titleFont;
+    line-height: 0.9;
+}
+
+h2 {
+    font-size: 52px;
+    font-family: $titleFont;
+    line-height: 0.9;
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 0.9;
+}
+
+h4 {
+    font-size: 32px;
+    font-family: $titleFont;
+    margin-bottom: 0.5em;
+}
+
+p {
+    line-height: 1.5;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+}
+
+label {
+    cursor: pointer;
+}
+
+@include md {
+    body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    input {
+        height: $input-height-md;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,15 @@
+//- Аргументом в миксин передаётся объект с полями selectedText и options
+//- selectedText - Строка, текст выбранной опции
+//- options - Массив значений всех опций
+
+mixin select({selectedText, options})
+  .select
+    button(type="button").select__current-value
+      span.cutted-text= selectedText
+      img(src="./images/arrow-down.svg", alt="")
+    ul.select__options
+      each opt in options
+        if selectedText === opt
+          li: button(type="button").select__option.select__option_active.cutted-text= opt
+        else
+          li: button(type="button").select__option.cutted-text= opt

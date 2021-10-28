@@ -1,0 +1,99 @@
+include components/_nav
+include components/_load
+include components/_remove
+include components/_checkbox
+include components/_select
+
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        h1 Кабинет студента
+      +nav([{text: "Настройки профиля"}, {text: "Документы", className:"nav__link_active"}, {text: "Платежи", className:"nav__link_warm"}])
+      .wrapper.wrapper_page
+        .payments
+          p.payments__description Для оплаты доступны только предстоящие семестры, оплата возможна только картой. Чтобы оплатить все семестры со скидкой, обратитесь к менеджеру.
+          .payments__select
+            +select({selectedText: "Все программы", options: ["Все программы", "item 1", "item 2", "item 3", "item 4",]})
+          table.table
+            tbody
+              tr.table__row.hide-for-lg
+                th.table__cell.table__cell_head Название
+                th.table__cell.table__cell_head Дата платежа
+                th.table__cell.table__cell_head Семестр
+                th.table__cell.table__cell_head Стоимость
+                th.table__cell.table__cell_head
+              tr.table__row
+                td.table__cell
+                  b.hide-for-lg-up Название
+                  p.table__title Общая психология
+                td.table__cell
+                  b.hide-for-lg-up Дата платежа
+                  p 1 января 2022
+                td.table__cell
+                  b.hide-for-lg-up Семестр
+                  p 2
+                td.table__cell
+                  b.hide-for-lg-up Стоимость
+                  p 12 500 ₽
+                td.table__cell.table__cell_status: a(href="#").btn.btn_hollow.btn_sm Оплатить
+              tr.table__row
+                td.table__cell
+                  b.hide-for-lg-up Название
+                  p.table__title Психологическое консультирование и диагностирование
+                td.table__cell
+                  b.hide-for-lg-up Дата платежа
+                  p 1 января 2022
+                td.table__cell
+                  b.hide-for-lg-up Семестр
+                  p 2
+                td.table__cell
+                  b.hide-for-lg-up Стоимость
+                  p 75 000 ₽
+                td.table__cell.table__cell_status: a(href="#").btn.btn_hollow.btn_sm Оплатить
+              tr.table__row
+                td.table__cell
+                  b.hide-for-lg-up Название
+                  p.table__title Общая психология
+                td.table__cell
+                  b.hide-for-lg-up Дата платежа
+                  p 1 января 2022
+                td.table__cell
+                  b.hide-for-lg-up Семестр
+                  p 2
+                td.table__cell
+                  b.hide-for-lg-up Стоимость
+                  p 12 500 ₽
+                td.table__cell.table__cell_status
+              tr.table__row
+                td.table__cell
+                  b.hide-for-lg-up Название
+                  p.table__title Общая психология
+                td.table__cell
+                  b.hide-for-lg-up Дата платежа
+                  p 1 января 2022
+                td.table__cell
+                  b.hide-for-lg-up Семестр
+                  p 2
+                td.table__cell
+                  b.hide-for-lg-up Стоимость
+                  p 12 500 ₽
+                td.table__cell.table__cell_status Оплачен 12 декабря 2021
+
+
+              tr.table__summary
+                td.table__cell.table__cell_summary Всего
+                td.table__cell.table__cell_summary 8 месяцев
+                td.table__cell.table__cell_summary 13 платежей
+                td.table__cell.table__cell_summary 406 000 ₽
+                td.table__cell.hide-for-lg
+          .notification
+            h4 Сэкономьте 13% стоимости обучения
+            p Государство вернёт часть стоимости обучения за последние три года. Для получения налогового вычета понадобятся документы об оплате обучения и справка о доходах.
+            a(href="#").underline Как получить вычет по налогам за обучение на сайте налоговой службы
+
+
+    include components/_footer

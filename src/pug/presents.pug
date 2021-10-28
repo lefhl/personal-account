@@ -1,0 +1,31 @@
+include components/_nav
+include components/_load
+include components/_remove
+include components/_checkbox
+include components/_select
+
+-
+  var links = [{text: "Настройки профиля"}, {text: "Документы"}, {text: "Платежи"}, {text: "Подарки за приглашения друзей", className:"nav__link_active"}]
+
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        h1 Кабинет студента
+      +nav(links)
+      .wrapper.wrapper_page
+        .presents
+          p.presents__desc Для оплаты доступны только предстоящие семестры, оплата возможна только картой. Чтобы оплатить все семестры со скидкой, <a href="#" class="underline">напишите нам.</a>
+          .link.presents__link
+            .link__text https://sredaobuchenia.ru/ref/h414sT2
+            button(type="button").link__copy-btn
+              include ./../images/copy.svg
+              | Скопировать ссылку
+          include components/_share
+
+
+
+    include components/_footer

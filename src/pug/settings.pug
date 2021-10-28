@@ -1,0 +1,86 @@
+include components/_nav
+include components/_load
+include components/_remove
+include components/_checkbox
+
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        h1 Кабинет студента
+      +nav([{text: "Настройки профиля"}, {text: "Документы", className:"nav__link_active"}, {text: "Платежи", className:"nav__link_warm"}])
+      .wrapper.wrapper_page
+        form.form
+          section.form__section
+            h2 Личные данные
+            .form__group
+              label(for="name") Имя
+              input(type="text")#name
+              label(for="surname") Фамилия
+              input(type="text")#surname
+              label(for="city") Город
+              input(type="text")#city
+              label(for="phone") Телефон
+              input(type="text")#phone
+              label(for="post") Почта
+              input(type="text")#post
+              h2 Смена пароля
+              label(for="pass") Текущий пароль
+              input(type="text")#pass
+              label(for="new-pass") Новый пароль
+              input(type="text")#new-pass
+              label(for="repeated-pass") Повторите пароль
+              input(type="text")#repeated-pass
+          section.form__section.form__section_checkboxed
+            .form__line
+              h2 Уведомления
+              span.hide-for-sm На почту
+              span.hide-for-sm На платформе
+            .form__line
+              h4.form__checkbox-subtitle Изменения в расписании
+              .form__checkbox
+                span.hide-for-sm-up На почту
+                +checkbox(name="timetable-email")
+              .form__checkbox
+                span.hide-for-sm-up На платформе
+                +checkbox(name="timetable-platform")
+            .form__line
+              h4.form__checkbox-subtitle Результаты проверки задания
+              .form__checkbox
+                span.hide-for-sm-up На почту
+                +checkbox(name="checkup-email")
+              .form__checkbox
+                span.hide-for-sm-up На платформе
+                +checkbox(name="checkup-platform")
+            .form__line
+              h4.form__checkbox-subtitle Новые материалы в курсе
+              .form__checkbox
+                span.hide-for-sm-up На почту
+                +checkbox(name="new-materiasl-email")
+              .form__checkbox
+                span.hide-for-sm-up На платформе
+                +checkbox(name="new-materiasl-platform")
+            .form__line
+              h4.form__checkbox-subtitle Информация об оплате
+              .form__checkbox
+                span.hide-for-sm-up На почту
+                +checkbox(name="payment-info-email")
+              .form__checkbox
+                span.hide-for-sm-up На платформе
+                +checkbox(name="payment-info-platform")
+            .form__line
+              h4.form__checkbox-subtitle Напоминание об уроке
+              .form__checkbox
+                span.hide-for-sm-up На почту
+                +checkbox(name="reminder-email")
+              .form__checkbox
+                span.hide-for-sm-up На платформе
+                +checkbox(name="reminder-platform")
+          div
+            button(type="button").btn.form__btn Сохранить
+
+
+    include components/_footer

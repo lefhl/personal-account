@@ -1,0 +1,17 @@
+.share {
+    display: flex;
+    p {
+        margin-right: 12px;
+    }
+    &__link {
+        margin-right: 12px;
+        path {
+            transition: fill-opacity 0.3s ease;
+        }
+        &:hover {
+            path {
+                fill-opacity: 1;
+            }
+        }
+    }
+}

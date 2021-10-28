@@ -1,0 +1,46 @@
+include components/_nav
+include components/_load
+include components/_remove
+
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        h1 Кабинет студента
+      +nav([{text: "Настройки профиля"}, {text: "Документы", className:"nav__link_active"}, {text: "Платежи"}])
+      .wrapper.wrapper_page
+
+        article.docs
+          .notification.docs__notification
+            h4 Чтобы приступить к обучению
+            ul.notification__list
+              li.notification__item Загрузите документы для подготовки оферты
+              li.notification__item Ознакомьтесь с офертой и согласитесь с её условиями
+              li.notification__item Оплатите обучение в разделе «Платежи»
+              li.notification__item Согласитесь с условиями остальных документов
+              li.notification__item Распечатайте документы, подпишите и загрузите в личный кабинет
+          header.docs__header
+            h2 Документы для оферты
+            p Загрузите сканы или фотографии документов. При загрузке фотографий, убедитесь, что документы сфотографированы ровно, текст разборчивый, а в кадре нет посторонних предметов.
+          .docs__main
+            .doc
+              .doc__title.cutted-text: span Документ, удостоверяющий личность
+              .doc__main
+                .doc__file
+                  .doc__file-text
+                    p.err-message Вы не загрузили необходимый документ
+
+              .doc__load: +load
+            .doc.doc_aligned
+              .doc__title.cutted-text <span class="upp">Снилс</span>, номер или изображение
+              .doc__main: input(type="text" placeholder="___-___-___ __").doc__snils.invalid
+              .doc__load: +load
+              .doc__main-extra
+
+                p.err-message С номером что-то не так. Проверьте написание или загрузите изображение документа
+          button(type="button").btn.docs__send-btn.disabled Отправить на проверку
+          p.docs__subscription Менеджер проверит документы в течение двух рабочих дней, выставит оферту для подписи и список остальных документов для зачисления
+    include components/_footer

@@ -1,0 +1,143 @@
+.header {
+    background-color: $black;
+    padding: 20px 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+
+    &__nav {
+        display: flex;
+    }
+
+    &__logo {
+        path {
+            transition: fill 0.3s ease;
+        }
+
+        &:hover {
+            path {
+                fill: rgba(#fff, 0.7);
+            }
+        }
+    }
+
+    &__nav-link {
+        font-weight: 600;
+        margin-right: 40px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        path {
+            transition: fill 0.3s ease;
+        }
+
+        &:hover {
+            color: rgba(#fff, 0.7);
+            path {
+                fill: currentColor;
+            }
+        }
+    }
+
+    &__ui-link {
+        margin-right: 26px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__ui-link,
+    &__burger {
+        path,
+        rect {
+            transition: fill 0.3s ease;
+        }
+        &:hover {
+            path,
+            rect {
+                fill: rgba(#fff, 0.7);
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        svg {
+            position: relative;
+        }
+        rect {
+            transition: transform 0.3s ease;
+        }
+
+        &_active {
+            rect:first-child {
+                transform: rotate(45deg);
+                transform-origin: 54% 59%;
+            }
+
+            rect:nth-child(2) {
+                display: none;
+            }
+            rect:last-child {
+                transform: rotate(-45deg);
+                transform-origin: 24% 53%;
+            }
+        }
+    }
+
+    @include lg {
+        &__nav {
+            display: none;
+        }
+
+        &__burger {
+            display: block;
+        }
+
+        &__ui {
+            display: flex;
+            align-items: center;
+        }
+
+        &__ui-link {
+            margin-right: 40px;
+            &:last-child {
+                margin-right: inherit;
+            }
+        }
+    }
+
+    @include md {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 36px;
+    }
+
+    @include sm {
+        padding-left: 16px;
+        padding-right: 16px;
+
+        &__ui-link svg {
+            height: 19px;
+            width: auto;
+        }
+
+        &__logo svg {
+            height: 24px;
+            width: auto;
+        }
+
+        &__burger svg {
+            height: 24px;
+            width: auto;
+        }
+
+        &__ui-link {
+            margin-right: 24px;
+        }
+    }
+}

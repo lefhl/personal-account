@@ -1,0 +1,66 @@
+include components/_nav
+include components/_load
+include components/_remove
+include components/_status
+
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        h1 Кабинет студента
+      +nav([{text: "Настройки профиля"}, {text: "Документы", className:"nav__link_active"}, {text: "Платежи", className:"nav__link_warm"}])
+      .wrapper.wrapper_page
+        article.docs
+          .notification.docs__notification
+            h4 Чтобы приступить к обучению
+            ul.notification__list.notification__list_progressed
+              li.notification__item.notification__item_done
+                img(src="./images/tick.svg", alt="")
+                | Загрузите документы для подготовки оферты
+              li.notification__item Ознакомьтесь с офертой и согласитесь с её условиями
+              li.notification__item Оплатите обучение в разделе «Платежи»
+              li.notification__item Согласитесь с условиями остальных документов
+              li.notification__item Распечатайте документы, подпишите и загрузите в личный кабинет
+          section.docs__agreement
+            header.docs__header
+              h2 Согласие с условиями
+              p Чтобы начать процесс зачисления без полного пакета документов, нам нужно ваше электронное согласие. Ознакомьтесь с документами и нажмите «Согласиться», если принимаете условия. После принятия оферты, менеджер выставит остальные документы и откроется раздел с платежами.
+            .doc.doc_acceptable
+              a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Оферта
+              .doc__load: button(type="button").btn.btn_hollow.btn_sm Согласиться
+
+          header.docs__header
+            h2 Документы для зачисления
+            p Загрузите подписанные сканы или фотографии документов. При загрузке фотографий, убедитесь, что документы сфотографированы ровно, текст разборчивый, а в кадре нет посторонних предметов. Для подписи используйте <span class="accent-text">синюю ручку.</span>
+          .docs__main
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Документ, удостоверяющий личность
+              .doc__main
+                .doc__file
+                  .doc__file-text
+                    span.cutted-text pervaya_stranitsa_pasporta
+                    span .jpg
+                .doc__file
+                  .doc__file-text
+                    span.cutted-text stranitsa_pasporta_s_propiskoy_s_ochen_dlinnym_nazvaniem
+                    span .jpg
+              .doc__load: +status({text: "Принято"})
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner <span class="upp">Снилс</span>
+              .doc__main: .doc__file 662-985-436 89
+              .doc__load: +status({text: "Принято"})
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Оферта
+              .doc__load: +load
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Документ об образовании
+              .doc__load: +load
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Фотография 3×4
+              .doc__load: +load
+          button(type="button").btn.docs__send-btn Отправить на проверку
+          p.docs__subscription Менеджер проверит документы в течение двух рабочих дней
+    include components/_footer

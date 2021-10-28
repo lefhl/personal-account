@@ -1,0 +1,22 @@
+.status {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    white-space: nowrap;
+    img {
+        margin-right: 9px;
+    }
+
+    &_success {
+        color: $success-color;
+    }
+
+    @include md {
+        &_success {
+            img {
+                height: 9px;
+                margin-right: 8px;
+            }
+        }
+    }
+}

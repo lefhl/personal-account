@@ -1,0 +1,62 @@
+.docs {
+    &__header {
+        margin-bottom: 40px;
+    }
+
+    &__notification {
+        margin-bottom: 56px;
+    }
+
+    &__agreement {
+        margin-bottom: 56px;
+    }
+
+    &__main {
+        margin-bottom: 36px;
+    }
+
+    &__send-btn {
+        margin-bottom: 24px;
+    }
+
+    &__subscription {
+        font-size: 14px;
+        line-height: 1.43;
+        max-width: 50%;
+    }
+
+    @include md {
+        &__notification {
+            margin-bottom: 36px;
+        }
+
+        &__main {
+            margin-bottom: 24px;
+        }
+
+        &__send-btn {
+            min-width: calc(50% + 16px);
+            margin-bottom: 12px;
+            justify-content: center;
+        }
+
+        &__subscription {
+            max-width: 100%;
+            font-size: 10px;
+        }
+
+        &__agreement {
+            margin-bottom: 36px;
+        }
+
+        &__header {
+            margin-bottom: 24px;
+        }
+    }
+
+    @include sm {
+        &__send-btn {
+            width: 100%;
+        }
+    }
+}

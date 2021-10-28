@@ -1,0 +1,15 @@
+.remove {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+    path {
+        transition: fill-opacity 0.3s ease;
+    }
+
+    &:hover {
+        path {
+            fill-opacity: 1;
+        }
+    }
+}

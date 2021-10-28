@@ -1,0 +1,17 @@
+.presents {
+    &__desc {
+        max-width: 760px;
+        margin-bottom: 32px;
+    }
+
+    &__link {
+        margin-bottom: 40px;
+    }
+
+    @include md {
+        &__desc,
+        &__link {
+            margin-bottom: 20px;
+        }
+    }
+}

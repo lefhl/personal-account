@@ -1,0 +1,72 @@
+.select {
+    position: relative;
+
+    &:focus-within {
+        .select__options,
+        .select__current-value {
+            border-color: $input-focus-border-color;
+        }
+    }
+
+    &__current-value {
+        height: $input-height;
+        border: $input-border;
+        border-radius: $global-input-radius;
+        padding: 12px 21px 12px 12px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: border-color 0.3s ease;
+
+        img {
+            margin-left: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $input-focus-border-color;
+        }
+
+        &.active {
+            border-radius: $global-input-radius $global-input-radius 0 0;
+            img {
+                transform: rotate(180deg);
+            }
+
+            & + .select__options {
+                visibility: visible;
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    &__options {
+        position: absolute;
+        top: 100%;
+        list-style-type: none;
+        background-color: #fff;
+        visibility: hidden;
+        transition: transform 0.3s ease;
+        transform-origin: top left;
+        transform: scaleY(0);
+        border-left: $input-border;
+        border-right: $input-border;
+        border-bottom: $input-border;
+        border-radius: 0 0 $global-input-radius $global-input-radius;
+        left: 0;
+        right: 0;
+        z-index: 20;
+    }
+
+    &__option {
+        max-width: 100%;
+    }
+
+    @include md {
+        &__current-value {
+            height: $input-height-md;
+        }
+    }
+}
