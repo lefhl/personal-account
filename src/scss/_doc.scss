@@ -180,7 +180,10 @@
         &__main-extra {
             margin-top: 12px;
             .err-message {
-                margin-top: 12px;
+                margin-bottom: 12px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
 
