@@ -1,6 +1,6 @@
 .header {
     background-color: $black;
-    padding: 20px 40px;
+    padding: 18px 40px;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -42,12 +42,19 @@
         }
     }
 
-    &__ui-link {
-        margin-right: 26px;
-        &:last-child {
-            margin-right: 0;
-        }
+    &__ui {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 26px;
     }
+
+    // &__ui-link {
+    //     margin-right: 26px;
+    //     &:last-child {
+    //         display: none;
+    //         margin-right: 0;
+    //     }
+    // }
 
     &__ui-link,
     &__burger {
@@ -118,8 +125,8 @@
     }
 
     @include sm {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding: 11px 16px;
+        margin-bottom: 32px;
 
         &__ui-link svg {
             height: 19px;

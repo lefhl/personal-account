@@ -8,34 +8,12 @@
         padding-left: 24px;
         padding-right: 24px;
         border-bottom: 1px solid #d3d3d3;
-        &:first-child {
-            padding-left: 0;
-        }
-        &_status {
-            padding-right: 0;
-            width: 20%;
-            text-align: right;
-        }
-        &_head {
-            text-align: left;
-            padding-bottom: 16px;
-            margin-bottom: 12px;
-
-            &:first-child {
-                width: 33.33%;
-            }
-        }
-    }
-
-    &__title {
-        @extend .cutted-text;
-        width: 100%;
-    }
-
-    &__cell {
         height: 88px;
+
         &:first-child {
             position: relative;
+
+            padding-left: 0;
             &:hover {
                 position: absolute;
                 max-width: 50%;
@@ -49,6 +27,28 @@
                 }
             }
         }
+
+        &_status {
+            padding-right: 0;
+            width: 20%;
+            text-align: right;
+        }
+        &_head {
+            text-align: left;
+            padding-bottom: 16px;
+            margin-bottom: 12px;
+            height: auto;
+
+            &:first-child {
+                pointer-events: none;
+                width: 32.33%;
+            }
+        }
+    }
+
+    &__title {
+        @extend .cutted-text;
+        width: 100%;
     }
 
     &__summary {
@@ -70,13 +70,11 @@
             grid-template-columns: 1fr auto;
             grid-auto-rows: auto;
             grid-gap: 0 24px;
-            padding-bottom: 16px;
-            margin-bottom: 23px;
+            padding: 32px 0;
             border-bottom: 1px solid #d3d3d3;
 
             &:nth-child(2) {
                 border-top: 1px solid #d3d3d3;
-                padding-top: 32px;
             }
         }
 
@@ -121,6 +119,7 @@
         &__summary {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            padding-top: 16px;
 
             td:first-child {
                 grid-row: 1 / span 10;
@@ -136,13 +135,21 @@
             &_status {
                 margin-bottom: 0;
             }
+
+            &:nth-last-child(2) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__row {
+            line-height: 1.667;
+            padding: 16px 0 24px;
         }
     }
 
     @include sm {
         &__row {
             display: block;
-            padding-bottom: 24px;
         }
 
         &__cell {
@@ -150,6 +157,7 @@
                 display: flex;
                 flex-direction: column;
                 text-align: left;
+                margin-top: 15px;
             }
         }
     }

@@ -49,8 +49,9 @@
     }
 
     &_sm {
-        padding: 0 24px;
+        padding: 0 21px;
         height: 48px;
+        font-size: 16px;
     }
 
     @include md {

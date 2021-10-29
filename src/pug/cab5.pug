@@ -16,12 +16,10 @@ html.no-js(lang='ru')
         article.docs
           .notification.notification_dark.docs__notification
             .notification__conclusion
-              h4 Документы приняты, вы зачислены
+              h3.notification__title Документы приняты, вы зачислены
               a(href="#").btn Начать учиться
           section.docs__agreement
-            header.docs__header
-              h2 Согласие с условиями
-              p Чтобы начать процесс зачисления без полного пакета документов, нам нужно ваше электронное согласие. Ознакомьтесь с документами и нажмите «Согласиться», если принимаете условия. После принятия оферты, менеджер выставит остальные документы и откроется раздел с платежами.
+            h2 Согласие с&nbsp;условиями
             .doc.doc_acceptable
               a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Оферта
               .doc__load: +status({text: "Вы согласны"})
@@ -38,9 +36,7 @@ html.no-js(lang='ru')
               a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Соглашение о неразглашении
               .doc__load: +status({text: "Вы согласны"})
 
-          header.docs__header
-            h2 Документы для зачисления
-            p Загрузите подписанные сканы или фотографии документов. При загрузке фотографий, убедитесь, что документы сфотографированы ровно, текст разборчивый, а в кадре нет посторонних предметов. Для подписи используйте <span class="accent-text">синюю ручку.</span>
+          h2 Документы для&nbsp;зачисления
           .docs__main
             .doc
               .doc__title.cutted-text: span.doc__title-inner Документ, удостоверяющий личность

@@ -2,6 +2,7 @@ include components/_nav
 include components/_load
 include components/_remove
 include components/_checkbox
+include components/_select
 
 doctype html
 html.no-js(lang='ru')
@@ -19,10 +20,10 @@ html.no-js(lang='ru')
             .form__group
               label(for="name") Имя
               input(type="text")#name
-              label(for="surname") Фамилия
-              input(type="text")#surname
-              label(for="city") Город
-              input(type="text")#city
+              label(for="surname").form__fio-end Фамилия
+              input(type="text")#surname.form__fio-end
+              p Город
+              +select({selectedText: "Москва", options:  ["Москва", "Москва 1", "Москва 2", "Москва 3",]})
               label(for="phone") Телефон
               input(type="text")#phone
               label(for="post") Почта

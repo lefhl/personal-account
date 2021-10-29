@@ -1,7 +1,7 @@
 .notification {
     border-radius: $global-border-radius;
     background-color: $warm-color;
-    padding: 40px 40px 48px;
+    padding: 36px 40px 48px;
 
     &_dark {
         background-color: $black;
@@ -18,7 +18,7 @@
     }
 
     &__item {
-        margin-bottom: 12px;
+        margin-bottom: 16px;
         &:last-child {
             margin-bottom: 0;
         }
@@ -31,6 +31,13 @@
                 top: 0.1em;
             }
         }
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.25;
+        font-family: inherit;
     }
 
     &__conclusion {
@@ -64,10 +71,11 @@
 
         &__item {
             margin-bottom: 8px;
+            line-height: 1.667;
 
             img {
-                height: 8px;
-                width: 11px;
+                height: 16px;
+                width: 12px;
                 top: 0.2em;
             }
         }

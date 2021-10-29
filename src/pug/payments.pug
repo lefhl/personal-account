@@ -15,7 +15,9 @@ html.no-js(lang='ru')
       +nav([{text: "Настройки профиля"}, {text: "Документы", className:"nav__link_active"}, {text: "Платежи", className:"nav__link_warm"}])
       .wrapper.wrapper_page
         .payments
-          p.payments__description Для оплаты доступны только предстоящие семестры, оплата возможна только картой. Чтобы оплатить все семестры со скидкой, обратитесь к менеджеру.
+          p.payments__description Для оплаты доступны только предстоящие семестры, оплата возможна только картой.
+            br
+            |Чтобы оплатить все семестры со скидкой, обратитесь к менеджеру.
           .payments__select
             +select({selectedText: "Все программы", options: ["Все программы", "item 1", "item 2", "item 3", "item 4",]})
           table.table
@@ -43,7 +45,7 @@ html.no-js(lang='ru')
               tr.table__row
                 td.table__cell
                   b.hide-for-lg-up Название
-                  p.table__title Психологическое консультирование и диагностирование
+                  p.table__title Психологическое консультирование и диагностирование личности
                 td.table__cell
                   b.hide-for-lg-up Дата платежа
                   p 1 января 2022

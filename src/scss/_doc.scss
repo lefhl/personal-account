@@ -1,13 +1,17 @@
 .doc {
     border-top: 1px solid #d3d3d3;
     border-bottom: 1px solid #d3d3d3;
-    padding: 32px 0 16px;
+    // padding: 32px 0 16px;
+    padding: 32px 0;
+    min-height: 88px;
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) minmax(0, 1fr);
     grid-template-areas: "title main load";
     grid-auto-rows: auto;
     grid-gap: 0 24px;
     align-items: start;
+    align-content: center;
+    line-height: 1.5;
 
     & + & {
         border-top: none;
@@ -15,14 +19,14 @@
 
     &_aligned {
         align-items: center;
+        padding: 20px 0;
         grid-template-areas:
             "title main load"
             ". extraMain .";
     }
 
     &_acceptable {
-        padding-top: 20px;
-        padding-bottom: 4px;
+        padding: 20px 0;
         align-items: center;
         grid-template-columns: minmax(0, 2.5fr) minmax(0, 2.5fr) minmax(
                 auto,
@@ -32,12 +36,13 @@
 
     &__main {
         grid-area: main;
-        margin-bottom: 16px;
+        // margin-bottom: 16px;
+        overflow: hidden;
     }
 
     &__title {
         grid-area: title;
-        margin-bottom: 16px;
+        // margin-bottom: 16px;
 
         &_link {
             text-decoration: underline;
@@ -113,7 +118,6 @@
     &__load {
         grid-area: load;
         justify-self: end;
-        margin-bottom: 16px;
     }
 
     &__snils {
@@ -122,7 +126,10 @@
 
     &__main-extra {
         grid-area: extraMain;
-        margin-bottom: 16px;
+
+        .err-message {
+            margin-top: 16px;
+        }
 
         &_spanned {
             grid-column: 1 / span 2;
@@ -152,6 +159,7 @@
         }
 
         &__file {
+            margin-top: 12px;
             & + & {
                 margin-top: 12px;
             }
@@ -159,10 +167,21 @@
     }
 
     @include md {
-        padding-top: 16px;
-        padding-bottom: 0;
         font-size: 12px;
         grid-gap: 0 16px;
+        min-height: 60px;
+        line-height: 1.667;
+        padding: 16px 0;
+
+        &_acceptable {
+            padding: 19px 0;
+        }
+
+        &__main-extra {
+            .err-message {
+                margin-top: 12px;
+            }
+        }
 
         &__action {
             margin-right: 20px;

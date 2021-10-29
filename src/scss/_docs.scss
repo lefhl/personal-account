@@ -3,16 +3,21 @@
         margin-bottom: 40px;
     }
 
+    &__subtitle {
+        max-width: 860px;
+    }
+
     &__notification {
         margin-bottom: 56px;
     }
 
     &__agreement {
-        margin-bottom: 56px;
+        // margin-bottom: 56px;
+        margin-bottom: 50px;
     }
 
     &__main {
-        margin-bottom: 36px;
+        margin-bottom: 34px;
     }
 
     &__send-btn {
