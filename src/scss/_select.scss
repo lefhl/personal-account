@@ -32,6 +32,7 @@
 
         &.active {
             border-radius: $global-input-radius $global-input-radius 0 0;
+            border-bottom: none;
             img {
                 transform: rotate(180deg);
             }
@@ -59,10 +60,33 @@
         left: 0;
         right: 0;
         z-index: 20;
+        padding: 0 4px;
+        overflow-y: auto;
+        max-height: 350px;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #fff;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #999;
+            border-radius: 5px;
+        }
     }
 
     &__option {
         max-width: 100%;
+        padding: 12px 8px;
+        border-radius: $global-input-radius;
+        transition: background-color .3s ease;
+        width: 100%;
+        text-align: left;
+        line-height: 1.667;
+        &:hover {
+            background-color: #F7F7F7;;
+        }
     }
 
     @include md {

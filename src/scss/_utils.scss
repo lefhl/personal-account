@@ -32,9 +32,12 @@
 
 .underline {
     text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(0, 0, 0, 0.2);
+    transition: text-decoration-color .3s ease;
 
     &:hover {
-        text-decoration: none;
+        text-decoration-color: rgba(0, 0, 0, 0.5);
     }
 }
 

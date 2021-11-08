@@ -1,12 +1,9 @@
 .link {
-    // display: flex;
-    // align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(auto, 368px));
     grid-gap: 24px;
     &__text {
         padding-right: 68px;
-        // margin-right: 24px;
         padding-bottom: 8px;
         padding-top: 8px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);

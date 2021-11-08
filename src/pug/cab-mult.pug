@@ -1,0 +1,114 @@
+include components/_nav
+include components/_load
+include components/_remove
+include components/_status
+
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        h1 Кабинет студента
+      +nav([{text: "Настройки профиля"}, {text: "Документы", className:"nav__link_active"}, {text: "Платежи", className:"nav__link_warm"}])
+      .wrapper.wrapper_page
+        article.docs
+          .notification.docs__notification
+            h4 Чтобы приступить к обучению
+            ul.notification__list
+              li.notification__item Загрузите документы для оферты
+              li.notification__item Ознакомьтесь и согласитесь с условиями оферты
+              li.notification__item Оплатите обучение
+              li.notification__item Согласитесь с условиями дополнительно выставленных документов
+              li.notification__item Распечатайте документы для зачисления, подпишите, загрузите в личный кабинет и отправьте на проверку
+              li.notification__item После успешной проверки документов появится ссылка на образовательную платформу
+          header.docs__header.docs__header_clamped
+            h2 Современная фотография и&nbsp;визуальная культура
+          .notification.notification_dark.docs__notification
+            .notification__conclusion
+              h3.notification__title Документы приняты, вы зачислены
+              a(href="#").btn Начать учиться
+          .doc.doc_acceptable
+            a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Оферта
+            .doc__load: +status({text: "Вы согласны"})
+          .doc.doc_acceptable
+            a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Дополнительное соглашение к оферте
+            .doc__load: +status({text: "Вы согласны"})
+          .doc.doc_acceptable
+            a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Согласие на обработку персональных данных
+            .doc__load: +status({text: "Вы согласны"})
+          .doc.doc_acceptable
+            a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Заявление на обучение
+            .doc__load: +status({text: "Вы согласны"})
+          .doc.doc_acceptable
+            a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Соглашение о неразглашении
+            .doc__load: +status({text: "Вы согласны"})
+        article.docs
+          header.docs__header
+            h2 Дизайн интерьеров и&nbsp;декорирование
+            h3.docs__docs-title Документы для&nbsp;оферты
+            p.docs__subtitle Загрузите сканы или фотографии документов. При загрузке фотографий, убедитесь, что документы сфотографированы ровно, текст разборчивый, а в кадре нет посторонних предметов.
+          .docs__main
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Документ, удостоверяющий личность
+              .doc__load: +load
+            .doc.doc_aligned
+              .doc__title.cutted-text: span.doc__title-inner <span class="upp">Снилс</span>, номер или изображение
+              .doc__main: input(type="text" placeholder="___-___-___ __").doc__snils
+              .doc__load: +load
+          button(type="button").btn.docs__send-btn Отправить на проверку
+          p.docs__subscription Менеджер проверит документы в течение двух рабочих дней, выставит оферту для подписи и список остальных документов для зачисления
+        article.docs
+          section.docs__agreement
+            header.docs__header
+              h2 Психологическое консультирование и&nbsp;диагностика личности
+              h3.docs__docs-title Согласие с условиями
+              p.docs__subtitle Чтобы начать процесс зачисления без полного пакета документов, нам нужно ваше электронное согласие. Пожалуйста, ознакомьтесь с документами и нажмите «Согласиться», если принимаете условия.
+            .doc.doc_acceptable
+              a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Оферта
+              .doc__load: +status({text: "Вы согласны"})
+            .doc.doc_acceptable
+              a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Дополнительное соглашение к оферте
+              .doc__load: button(type="button").btn.btn_hollow.btn_sm Согласиться
+            .doc.doc_acceptable
+              a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Согласие на обработку персональных данных
+              .doc__load: button(type="button").btn.btn_hollow.btn_sm Согласиться
+            .doc.doc_acceptable
+              a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Заявление на обучение
+              .doc__load: button(type="button").btn.btn_hollow.btn_sm Согласиться
+            .doc.doc_acceptable
+              a(href="#" download).doc__title.doc__title_link.cutted-text: span.doc__title-inner Соглашение о неразглашении
+              .doc__load: button(type="button").btn.btn_hollow.btn_sm Согласиться
+          header.docs__header
+            h2 Документы для&nbsp;зачисления
+            p.docs__subtitle Загрузите подписанные сканы или фотографии документов. При загрузке фотографий, убедитесь, что документы сфотографированы ровно, текст разборчивый, а в кадре нет посторонних предметов. Для подписи используйте <span class="accent-text">синюю ручку.</span>
+          .docs__main
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Документ, удостоверяющий личность
+              .doc__main
+                .doc__file
+                  .doc__file-text
+                    span.cutted-text pervaya_stranitsa_pasporta
+                    span .jpg
+                .doc__file
+                  .doc__file-text
+                    span.cutted-text stranitsa_pasporta_s_propiskoy_s_ochen_dlinnym_nazvaniem
+                    span .jpg
+              .doc__load: +status({text: "Принято"})
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner <span class="upp">Снилс</span>
+              .doc__main: .doc__file 662-985-436 89
+              .doc__load: +status({text: "Принято"})
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Оферта
+              .doc__load: +status({text: "Принято"})
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Документ об образовании
+              .doc__load: +load
+            .doc
+              .doc__title.cutted-text: span.doc__title-inner Фотография 3×4
+              .doc__load: +load
+          button(type="button").btn.docs__send-btn Отправить на проверку
+          p.docs__subscription Менеджер проверит документы в течение двух рабочих дней
+    include components/_footer

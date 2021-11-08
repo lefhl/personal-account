@@ -1,0 +1,50 @@
+.alert {
+    display: flex;
+    position: fixed;
+    background-color: $err-color;
+    padding: 20px 20px;
+    color: #fff;
+    bottom: 40px;
+    left: 40px;
+    max-width: 600px;
+    animation: alert-appear 0.35s ease-in-out;
+    border-radius: $global-input-radius;
+
+    &__closer {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        margin-left: 30px;
+        color: $black;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @include md {
+        left: 30px;
+        bottom: 30px;
+        &__closer {
+            font-size: 11px;
+        }
+    }
+
+    @include sm {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        justify-content: space-between;
+        border-radius: $global-input-radius $global-input-radius 0 0;
+    }
+}
+
+@keyframes alert-appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

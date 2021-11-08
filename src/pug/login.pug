@@ -1,0 +1,22 @@
+doctype html
+html.no-js(lang='ru')
+  include components/_head
+  body
+    include components/_header
+    main
+      .wrapper
+        form.auth
+          .auth__wrapper
+            .auth__logo: include ./../images/logo_texted.svg
+            label.auth__field
+              span.auth__label-text Электронная почта или телефон
+              input(type="email")
+            label.auth__field
+              span.auth__label-text Пароль
+              input(type="password")
+            .auth__tools
+              button(type="button").btn.btn_sm.btn_hollow Войти
+              a(href="#").underline Войти по СМС
+      .alert Some error occured.
+        button(type="button").alert__closer Закрыть
+

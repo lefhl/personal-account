@@ -1,0 +1,57 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    &__wrapper {
+        max-width: 300px;
+    }
+    &__logo {
+        background-color: $black;
+        text-align: center;
+        padding: 40px 30px;
+        margin-bottom: 20px;
+        svg {
+            max-width: 200px;
+            height: auto;
+        }
+        path {
+            fill: #fff;
+        }
+    }
+
+    &__field {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    &__label-text {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    &__tools {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 15px;
+
+        &_sms {
+            align-items: stretch;
+            flex-direction: column;
+        }
+    }
+
+    @include md {
+        align-items: flex-start;
+        padding-top: 50px;
+
+        &__tools {
+            flex-direction: column;
+            align-items: stretch;
+            text-align: center;
+
+            .btn {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -17,8 +17,13 @@
         }
     }
 
+    h4 {
+        margin-bottom: 12px;
+    }
+
     &__item {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+        line-height: 1.5;
         &:last-child {
             margin-bottom: 0;
         }
@@ -38,6 +43,7 @@
         font-weight: 600;
         line-height: 1.25;
         font-family: inherit;
+        margin-bottom: 0;
     }
 
     &__conclusion {
@@ -83,16 +89,23 @@
         &_dark {
             padding: 24px;
         }
+
+
+    &__title {
+        font-size: 20px;
+        }
     }
 
     @include sm {
         &__conclusion {
             flex-direction: column;
 
-            h4 {
-                margin-bottom: 16px;
+            h3 {
+                margin: 0 0 16px;
                 text-align: center;
             }
+
+
 
             .btn {
                 align-self: stretch;

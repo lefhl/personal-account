@@ -1,6 +1,22 @@
 .docs {
+    & + & {
+        margin-top: 72px;
+    }
     &__header {
         margin-bottom: 40px;
+        max-width: 860px;
+
+        &_clamped {
+            margin: 72px 0 52px;
+        }
+
+        h2 + h3 {
+            margin-top: 48px;
+        }
+    }
+
+    &__docs-title {
+        margin-bottom: 16px;
     }
 
     &__subtitle {
@@ -9,10 +25,13 @@
 
     &__notification {
         margin-bottom: 56px;
+
+        .docs__header_clamped + & {
+            margin-bottom: 40px;
+        }
     }
 
     &__agreement {
-        // margin-bottom: 56px;
         margin-bottom: 50px;
     }
 
@@ -31,6 +50,10 @@
     }
 
     @include md {
+        & + & {
+            margin-top: 48px;
+        }
+
         &__notification {
             margin-bottom: 36px;
         }
@@ -56,6 +79,15 @@
 
         &__header {
             margin-bottom: 24px;
+
+            h2 + h3 {
+                margin-top: 24px;
+            }
+
+            &_clamped {
+                margin-top: 48px;
+                margin-bottom: 36px;
+            }
         }
     }
 
