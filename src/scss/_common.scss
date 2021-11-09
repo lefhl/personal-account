@@ -31,6 +31,10 @@ a {
     &:focus {
         color: inherit;
     }
+
+    &:hover {
+        transition: none;
+    }
 }
 
 b {
@@ -61,6 +65,7 @@ textarea {
         box-shadow: none;
         border-color: $input-focus-border-color;
         outline: none;
+        transition: none;
     }
 
     &::placeholder {

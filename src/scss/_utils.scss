@@ -38,11 +38,16 @@
 
     &:hover {
         text-decoration-color: rgba(0, 0, 0, 0.5);
+        transition: none;
     }
 }
 
 .nowrap {
     white-space: nowrap;
+}
+
+.scroll-lock {
+    overflow: hidden;
 }
 
 @include lg {

@@ -1,0 +1,55 @@
+.dropdown {
+    position: relative;
+    font-size: 14px;
+
+    &__list {
+        list-style-type: none;
+        padding: 0 4px;
+        background-color: #fff;
+        border-radius: $global-input-radius;
+        line-height: 1.42;
+        position: absolute;
+        top: calc(100% + 11px);
+        right: 0;
+        width: 240px;
+        color: $black;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    &__item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &_head {
+            padding: 12px 8px;
+        }
+    }
+
+    &__name {
+        display: block;
+        margin-bottom: 8px;
+    }
+    &__email {
+        display: block;
+        font-size: 12px;
+    }
+
+    &__link {
+        border-radius: 8px;
+        transition: background-color .3s ease;
+        padding: 12px 8px;
+        display: block;
+
+        &:hover {
+            background-color: #F7F7F7;
+            transition: none;
+        }
+    }
+
+    @include md {
+        font-size: 12px;
+    }
+}

@@ -6,7 +6,7 @@ include components/_status
 doctype html
 html.no-js(lang='ru')
   include components/_head
-  body
+  body.scroll-lock
     include components/_header
     main
       .wrapper
@@ -111,4 +111,6 @@ html.no-js(lang='ru')
               .doc__load: +load
           button(type="button").btn.docs__send-btn Отправить на проверку
           p.docs__subscription Менеджер проверит документы в течение двух рабочих дней
+    include components/_modal
+
     include components/_footer

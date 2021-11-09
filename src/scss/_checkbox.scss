@@ -1,12 +1,11 @@
 .checkbox {
-    &__box {
+
+    &_texted  {
         display: flex;
-        justify-content: center;
         align-items: center;
-        width: 24px;
-        height: 24px;
-        border-radius: 4px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        font-size: 10px;
+
+
     }
 
     path {
@@ -15,7 +14,48 @@
         transition: fill-opacity 0.2s ease-in-out;
     }
 
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        &_sm {
+            height: 16px;
+            width: 16px;
+            border-radius: $global-input-radius / 2;
+
+            svg {
+                height: 9px;
+            }
+        }
+
+        &_dark {
+            path {
+                fill: #fff;
+            }
+        }
+    }
+
+    &__text {
+        margin-left: 8px;
+        line-height: 1.6;
+    }
+
+
+
     input:checked + &__box path {
         fill-opacity: 1;
+        transition: none;
     }
+
+    input:checked + &__box_dark {
+        background-color: #000;
+    }
+
+
 }

@@ -6,5 +6,17 @@ header.header
     a(href="").header__nav-link Расписание вебинаров
   nav.header__ui
     a(href="").header__ui-link: include ./../../images/bell.svg
-    a(href="").header__ui-link: include ./../../images/user.svg
+    div.dropdown.header__ui-link
+      button(type="button"): include ./../../images/user.svg
+      ul.dropdown__list
+        li.dropdown__item.dropdown__item_head
+          strong.dropdown__name Константин Константинопольский
+          small.dropdown__email konstantinkonstantin@gmail.com
+        li.dropdown__item
+          a(href="#").dropdown__link Настройки профиля
+          a(href="#").dropdown__link Документы
+          a(href="#").dropdown__link Платежи
+        li.dropdown__item: a(href="#").dropdown__link Выход
+
+
     button(type="button").header__burger: include ./../../images/burger.svg

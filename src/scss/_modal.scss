@@ -1,0 +1,87 @@
+.modal {
+    position: fixed;
+    top: 0;
+    padding: 80px 20px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0;
+    right: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &__inner {
+        position: relative;
+        border-radius: 24px;
+        background-color: #fff;
+        padding: 40px 60px 40px 40px;
+        max-width: 592px;
+        width: 100%;
+    }
+
+    &__title {
+        line-height: 0.875;
+        padding-right: 40px;
+
+    }
+
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 12px;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        path {
+            transition: fill-opacity .3s ease;
+        }
+
+        &:hover {
+            path {
+                fill-opacity: 1;
+                transition: none;
+            }
+        }
+    }
+
+    &__agreements {
+        display: grid;
+        grid-gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 24px;
+    }
+
+    &__subtitle {
+        margin-bottom: 24px;
+    }
+
+    &__checkbox {
+        display: flex;
+
+    }
+
+    @include md {
+
+    }
+
+    @include sm {
+        padding-left: 16px;
+        padding-right: 16px;
+        &__inner {
+            padding: 28px 24px 36px;
+        }
+
+        &__agreements {
+            display: grid;
+            grid-gap: 12px;
+            grid-template-columns: 1fr;
+            margin-bottom: 24px;
+        }
+    }
+}

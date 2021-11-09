@@ -1,0 +1,13 @@
+.modal
+  .modal__inner
+    button(type="button").modal__close: include ../../images/close.svg
+    h4.modal__title Подтверждение согласия с&nbsp;условиями
+    p.modal__subtitle Подтверждая, вы соглашаетесь с условиями документа
+    .modal__agreements
+      button(type="button").btn.btn_narrow Да, соглашаюсь
+      button(type="button").btn.btn_narrow.btn_hollow Нет, ещё подумаю
+    label.checkbox.checkbox_texted
+      input(type="checkbox" name=name).visually-hidden
+      span.checkbox__box.checkbox__box_sm.checkbox__box_dark
+        include ./../../images/tick.svg
+      span.checkbox__text Соглашаться без подтверждения

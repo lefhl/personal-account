@@ -5,7 +5,14 @@
 
     &__wrapper {
         display: flex;
-        overflow-x: auto;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+    }
+
+    &__container {
+        overflow-y: hidden;
+        height: 39px;
     }
 
     &__link {
@@ -58,7 +65,7 @@
                 height: 8px;
                 border-radius: 50%;
                 background-color: $err-color;
-                margin-right: 4px;
+                margin-right: 8px;
             }
         }
     }
@@ -67,9 +74,17 @@
         margin-bottom: 28px;
         font-size: 12px;
 
+        &__container {
+            height: 27px;
+        }
+
         &__link {
             padding-bottom: 12px;
             margin-right: 24px;
+
+            &_warm::before {
+                margin-right: 4px;
+            }
         }
     }
 }
