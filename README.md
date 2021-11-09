@@ -74,3 +74,5 @@ $ npm start
 npm run start команда для разработки локально. Страницу можно открыть в браузере по адресу http://localhost:3010, либо просто найти нужный файл в итоговой папке dist.
 Для сборки production версии команда - npm run minify. Собирает файлы и кладет в dist папку.
 Для проверки правильности js и scss файлов - команда npm run lint-prod
+
+Ссылка на проект: https://lefhl.github.io/personal-account/
