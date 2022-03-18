@@ -1,4 +1,5 @@
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -11,13 +12,11 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
-    color: $text-color;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    & > main {
-        flex-grow: 1;
+    font-family: "Hauora", sans-serif;
+    color: #333;
+
+    .v-application {
+        font-family: inherit;
     }
 }
 
@@ -26,15 +25,14 @@ a {
     text-decoration-skip-ink: none;
     color: inherit;
     text-decoration: none;
-
-    &:active,
-    &:focus {
-        color: inherit;
-    }
-
-    &:hover {
-        transition: none;
-    }
+}
+a:active,
+a:focus {
+    color: inherit;
+}
+a:hover {
+    -webkit-transition: none;
+    transition: none;
 }
 
 b {
@@ -50,7 +48,7 @@ textarea {
     display: block;
     width: 100%;
     padding: 12px;
-    border: $input-border;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #fff;
     font-weight: normal;
     font-size: 16px;
@@ -58,12 +56,12 @@ textarea {
     appearance: none;
     box-shadow: none;
     line-height: normal;
-    border-radius: $global-input-radius;
-    height: $input-height;
+    border-radius: 8px;
+    height: 48px;
 
     &:focus {
         box-shadow: none;
-        border-color: $input-focus-border-color;
+        border-color: rgba(0, 0, 0, 0.4);
         outline: none;
         transition: none;
     }
@@ -74,7 +72,7 @@ textarea {
 
     &:invalid,
     &.invalid {
-        border-color: $err-color;
+        border-color: #ff4f26;
     }
 }
 
@@ -88,39 +86,44 @@ input[type="checkbox"] {
 }
 
 select {
-    padding-top: rem-calc(0);
-    padding-bottom: rem-calc(0);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-h1 {
+h1,
+.h1 {
     font-size: 64px;
     margin-bottom: 0.5em;
-    font-family: $titleFont;
-    line-height: 0.9;
+    font-family: "Mazzard L", sans-serif;
+    line-height: 0.8125;
 }
 
-h2 {
-    font-size: 52px;
-    font-family: $titleFont;
-    line-height: 0.9;
+h2,
+.h2 {
+    font-size: 48px;
+    font-family: "Mazzard L", sans-serif;
+    line-height: 0.917;
     margin-bottom: 28px;
 }
 
-h3 {
-    font-size: 40px;
-    line-height: 0.9;
-    font-family: $titleFont;
+h3,
+.h3 {
+    font-size: 36px;
+    line-height: 1;
+    font-family: "Mazzard L", sans-serif;
     margin-bottom: 16px;
 }
 
-h4 {
-    font-size: 32px;
-    font-family: $titleFont;
+h4,
+.h4 {
+    font-size: 28px;
+    line-height: 0.857;
+    font-family: "Mazzard L", sans-serif;
     margin-bottom: 0.5em;
 }
 
 p {
-    line-height: 1.5;
+    line-height: 1.25;
 }
 
 button {
@@ -139,32 +142,29 @@ label {
     body {
         font-size: 12px;
     }
-
-    p {
-        line-height: 1.667;
-    }
-
-    h1 {
-        font-size: 44px;
+    h1,
+    .h1 {
+        font-size: 40px;
+        line-height: 0.8;
         margin-bottom: 16px;
     }
-
-    h2 {
-        font-size: 36px;
+    h2,
+    .h2 {
+        font-size: 32px;
+        line-height: 0.9375;
         margin-bottom: 16px;
     }
-
-    h3 {
+    h3,
+    .h3 {
         font-size: 28px;
+    }
+    h4,
+    .h4 {
+        font-size: 20px;
         line-height: 1;
     }
-
-    h4 {
-        font-size: 24px;
-    }
-
     input {
-        height: $input-height-md;
+        height: 44px;
         font-size: 12px;
     }
 }
